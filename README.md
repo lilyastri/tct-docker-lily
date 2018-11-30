@@ -1,13 +1,13 @@
-### Docker - Deploying Your First Docker Container
+## Docker - Deploying Your First Docker Container
 ---
 
-Pengertian Docker
+Apa itu Docker??
 ---
 Docker menggambarkan diri mereka sebagai "platform terbuka untuk pengembang dan sysadmin untuk membangun, mengirim, dan menjalankan aplikasi terdistribusi". 
 
 ---
 
-1. Menjalankan Container
+**1. Menjalankan Container**
 ---
 mengidentifikasi nama Gambar Docker yang dikonfigurasi untuk menjalankan Redis. Dengan Docker, semua kontainer dimulai berdasarkan Gambar Docker. Gambar-gambar ini mengandung semua yang diperlukan untuk meluncurkan proses; host tidak memerlukan konfigurasi atau dependensi apa pun.
 
@@ -32,7 +32,7 @@ Gambar 2
 Secara default, Docker akan menjalankan versi terbaru yang tersedia. Jika versi tertentu diperlukan, itu bisa ditetapkan sebagai tag, misalnya, versi 3.2 akan menjadi buruh pelabuhan menjalankan-redis: 3.2.
 
 ---
-2. Menemukan Container Berjalan
+**2. Menemukan Container Berjalan**
 ---
 
     docker ps 
@@ -47,7 +47,7 @@ perintah memberikan detail lebih lanjut tentang penampung yang berjalan, seperti
 peintah yang akan menampilkan pesan yang ditulis oleh container
 
 ---
-3. Akses Redis
+**3. Akses Redis**
 ---
 
 Perintah untuk menjalankan Redis di background, dengan nama redisHostPort pada port 6379 
@@ -64,7 +64,7 @@ Secara default, port pada host dipetakan ke 0.0.0.0, yang berarti semua alamat I
 Anda menentukan pemetaan port, misalnya, -p 127.0.0.1:6379:6379
 
 ---
-4. Akses Redis
+**4. Akses Redis**
 ---
 
 kemudian dapat ditemukan bahwa hanya menggunakan opsi -p 6379 memungkinkannya untuk mengekspos Redis tetapi pada port yang tersedia secara acak. untuk menguji port tersebut digunakan perintah
@@ -86,7 +86,7 @@ kemudian untuk menampilkan informasi pemetaan port menggunakan perintah
 gambar 7
 
 ---
-5. Persisting Data
+**5. Persisting Data**
 ---
 
 Data apa pun yang perlu disimpan di Host Docker, dan bukan di dalam kontainer, harus disimpan di / opt / docker / data / redis. Perintah lengkap untuk menyelesaikan tugasnya adalah
@@ -96,7 +96,7 @@ Data apa pun yang perlu disimpan di Host Docker, dan bukan di dalam kontainer, h
 Gambar 8
 
 ---
-6. Menjalankan Kontainer Di Foreground
+**6. Menjalankan Kontainer Di Foreground**
 ---
 
 Sebagai contoh, Images Ubuntu dapat menjalankan perintah OS atau menjalankan perintah bash interaktif menggunakan / bin / bash
@@ -113,10 +113,10 @@ menggunakan perintah dibawwah untuk mendapatkan akses ke shell bash di dalam con
     docker run -it ubuntu bash
 
 ---
-### Docker - Deploy Static HTML Website as Container
+## Docker - Deploy Static HTML Website as Container
 ---
 
-1. Membuat Dockerfile
+**1. Membuat Dockerfile**
 ---
 
 Images Docker mulai dari Images dasar. Images dasar harus menyertakan dependensi platform yang dibutuhkan oleh aplikasi kita, misalnya, memasang JVM atau CLR.
@@ -136,7 +136,7 @@ Gambar 10
 keterangan isi tersebut : Baris pertama mendefinisikan Images dasar kami. Baris kedua menyalin isi direktori saat ini ke lokasi tertentu di dalam Container.
 
 ---
-2. Membuat Images Docker
+**2. Membuat Images Docker**
 ---
 
 Dockerfile digunakan oleh perintah build Docker CLI. Perintah build menjalankan setiap instruksi dalam Dockerfile. Hasilnya adalah Docker Image yang dibangun yang dapat diluncurkan dan menjalankan aplikasi Anda yang telah dikonfigurasi.
@@ -177,7 +177,7 @@ gambar14
 Untuk membuat permintaan di browser, gunakan URL   https://2886795343-80-cykoria02.environments.katacoda.com/ . Anda sekarang memiliki situs web HTML statis yang dilayani oleh Nginx.
 
 ---
-### Docker - Building Container Images
+## Docker - Building Container Images
 ---
 
 Docker Images
@@ -186,7 +186,7 @@ Docker Images
 Docker Images dibuat berdasarkan Dockerfile. A Dockerfile mendefinisikan semua langkah yang diperlukan untuk membuat Docker Images dengan aplikasi Anda dikonfigurasi dan siap dijalankan sebagai container. Images itu sendiri mengandung segalanya, mulai dari sistem operasi hingga dependensi dan konfigurasi yang diperlukan untuk menjalankan aplikasi Anda.
 
 ---
-1. Base Images
+**1. Base Images**
 ---
 
 Images dasar ini digunakan sebagai dasar untuk perubahan tambahan Anda untuk menjalankan aplikasi Anda. Misalnya, dalam skenario ini, kami mengharuskan NGINX untuk dikonfigurasi dan berjalan pada sistem sebelum kami dapat menerapkan file HTML statis kami. Karena itu kami ingin menggunakan NGINX sebagai gambar dasar kami.
@@ -204,7 +204,7 @@ Baris pertama Dockerfile harus FROM nginx: 1.11-alpine
 membuat perubahan pada editor Dockerfile. Di dalam lingkungan, Dockerfile baru akan dibuat dengan konten editor.
 
 ---
-2. Running Commands
+**2. Running Commands**
 ---
 
 RUN <command> memungkinkan Anda untuk menjalankan perintah apa pun seperti yang Anda lakukan pada prompt perintah, misalnya menginstal paket aplikasi yang berbeda atau menjalankan perintah build. Hasil RUN dipertahankan ke Images sehingga penting untuk tidak meninggalkan file yang tidak perlu atau sementara pada disk karena ini akan dimasukkan dalam Images.
@@ -214,7 +214,7 @@ COPY <src> <dest> memungkinkan Anda untuk menyalin file dari direktori yang beri
 gambar16
 
 ---
-3. Exposing Ports
+**3. Exposing Ports**
 ---
 
 Dengan file ,kami disalin ke dalam images kami dan setiap dependensi yang diunduh, Anda perlu menentukan aplikasi port mana yang harus dapat diakses.
@@ -229,7 +229,7 @@ Kami ingin server web kami dapat diakses melalui port 80, tambahkan baris EXPOSE
 Gambar17
 
 ---
-4. Building Containers
+**4. Building Containers**
 ---
 
 Menggunakan perintah **docker build** untuk membuat Images. Anda dapat memberi nama images yang friendly dengan menggunakan opsi -t <name>.
@@ -240,7 +240,7 @@ kamu dapat menggunakan perintah dibawah untuk melihat list images yang berada di
 gambar18
 
 ---
-5. meluncurkan Images Baru
+**5. meluncurkan Images Baru**
 ---
 
 Jalankan contoh images yang baru Anda bangun menggunakan hasil ID dari perintah bangun atau nama panggilan yang Anda tetapkan.
