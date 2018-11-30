@@ -156,7 +156,7 @@ perintah yang digunakan untuk membuat Images HTML statis  menggunakan perintah b
 Images yang dibangun akan memiliki nama webserver-gambar dengan tag v1.
 
 ---
-3. Run
+**3. Run**
 ---
 
 Images yang dibangun dapat diluncurkan secara konsisten ke Images Docker lainnya. Saat container diluncurkan, ini dikotori dari proses dan jaringan lain di host. Ketika memulai sebuah container, kita perlu memberikan izin dan akses ke apa yang diperlukan.
