@@ -9,11 +9,11 @@ Docker menggambarkan diri mereka sebagai "platform terbuka untuk pengembang dan 
 
 **1. Menjalankan Container**
 ---
-mengidentifikasi nama Gambar Docker yang dikonfigurasi untuk menjalankan Redis. Dengan Docker, semua kontainer dimulai berdasarkan Gambar Docker. Gambar-gambar ini mengandung semua yang diperlukan untuk meluncurkan proses; host tidak memerlukan konfigurasi atau dependensi apa pun.
+mengidentifikasi nama Images Docker yang dikonfigurasi untuk menjalankan Redis. Dengan Docker, semua kontainer dimulai berdasarkan Images Docker. Images-Images ini mengandung semua yang diperlukan untuk meluncurkan proses; host tidak memerlukan konfigurasi atau dependensi apa pun.
 
 ---
 
-untuk mencari gambar untuk Redis, dapat memasukkan perintah 
+untuk mencari Images untuk Redis, dapat memasukkan perintah 
     
     docker search redis
 
