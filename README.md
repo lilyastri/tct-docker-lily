@@ -1,4 +1,4 @@
-## Docker - Deploying Your First Docker Container
+# Docker - Deploying Your First Docker Container
 ---
 
 Apa itu Docker??
@@ -113,7 +113,7 @@ menggunakan perintah dibawwah untuk mendapatkan akses ke shell bash di dalam con
     docker run -it ubuntu bash
 
 ---
-## Docker - Deploy Static HTML Website as Container
+# Docker - Deploy Static HTML Website as Container
 ---
 
 **1. Membuat Dockerfile**
@@ -177,7 +177,7 @@ gambar14
 Untuk membuat permintaan di browser, gunakan URL   https://2886795343-80-cykoria02.environments.katacoda.com/ . Anda sekarang memiliki situs web HTML statis yang dilayani oleh Nginx.
 
 ---
-## Docker - Building Container Images
+# Docker - Building Container Images
 ---
 
 Docker Images
