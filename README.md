@@ -17,7 +17,7 @@ untuk mencari gambar untuk Redis, dapat memasukkan perintah
     
     docker search redis
 
-Gambar 1
+  <img src="https://github.com/lilyastri/tct-docker-lily/blob/master/c1.jpg" alt="c1"/>
 
 dapat diidentifikasi bahwa Redis Docker Image disebut redis dan ingin menjalankan rilis terbaru. Dalam kasus ini Redis merupakan database. kemudian jika ingin menjalankannya sebagai layanan latar belakang sementara dia terus bekerja, maka luncurkan container di latar belakang yang menjalankan turunan Redis berdasarkan gambar resmi.
 
@@ -26,8 +26,8 @@ dapat diidentifikasi bahwa Redis Docker Image disebut redis dan ingin menjalanka
 Docker CLI memiliki perintah yang disebut run yang akan memulai kontainer berdasarkan Image Docker. 
     
     docker run -d redis
-
-Gambar 2
+ 
+ <img src="https://github.com/lilyastri/tct-docker-lily/blob/master/c2.jpg" alt="c2"/>
 
 Secara default, Docker akan menjalankan versi terbaru yang tersedia. Jika versi tertentu diperlukan, itu bisa ditetapkan sebagai tag, misalnya, versi 3.2 akan menjadi buruh pelabuhan menjalankan-redis: 3.2.
 
@@ -38,7 +38,7 @@ Secara default, Docker akan menjalankan versi terbaru yang tersedia. Jika versi 
     docker ps 
 perintah diatas mencantumkan semua kontainer yang sedang berjalan, gambar yang digunakan untuk memulai kontainer. Perintah ini juga menampilkan nama dan ID yang friendly yang dapat digunakan untuk mencari informasi tentang masing-masing kontainer.
 
-Gambar 3
+  <img src="https://github.com/lilyastri/tct-docker-lily/blob/master/c3.jpg" alt="c3"/>
 
     docker inspect <friendly-name|container-id>
 perintah memberikan detail lebih lanjut tentang penampung yang berjalan, seperti alamat IP
@@ -54,7 +54,7 @@ Perintah untuk menjalankan Redis di background, dengan nama redisHostPort pada p
   
     docker run -d --name redisHostPort -p 6379:6379 redis:latest
 
-Gambar 4
+  <img src="https://github.com/lilyastri/tct-docker-lily/blob/master/c4.JPG" alt="c4"/>
 
 ---
 
@@ -71,19 +71,19 @@ kemudian dapat ditemukan bahwa hanya menggunakan opsi -p 6379 memungkinkannya un
     
     docker run -d --name redisDynamic -p 6379 redis:latest
 
-Gambar 5 
+  <img src="https://github.com/lilyastri/tct-docker-lily/blob/master/c5.jpg" alt="c5"/>
 
 kemudian untuk mengetahui port mana yang akan ditugaskan maka perintahnya adalah 
     
     docker port redisDynamic 6379
 
-gambar 6
+  <img src="https://github.com/lilyastri/tct-docker-lily/blob/master/c6.jpg" alt="c6"/>
 
 kemudian untuk menampilkan informasi pemetaan port menggunakan perintah 
     
     docker ps
 
-gambar 7
+  <img src="https://github.com/lilyastri/tct-docker-lily/blob/master/c7.jpg" alt="c7"/>
 
 ---
 **5. Persisting Data**
@@ -93,7 +93,7 @@ Data apa pun yang perlu disimpan di Host Docker, dan bukan di dalam kontainer, h
     
     docker run -d --name redisMapped -v /opt/docker/data/redis:/data redis
 
-Gambar 8
+  <img src="https://github.com/lilyastri/tct-docker-lily/blob/master/c8.jpg" alt="c8"/>
 
 ---
 **6. Menjalankan Kontainer Di Foreground**
@@ -106,7 +106,7 @@ Sebagai contoh, Images Ubuntu dapat menjalankan perintah OS atau menjalankan per
     docker run ubuntu ps
 perintah untuk meluncurkan sebuah container Ubuntu dan mengeksekusi perintah ps untuk melihat semua proses yang berjalan.
 
-gambar 9
+  <img src="https://github.com/lilyastri/tct-docker-lily/blob/master/c9.jpg" alt="c9"/>
 
 menggunakan perintah dibawwah untuk mendapatkan akses ke shell bash di dalam container.
     
@@ -131,7 +131,7 @@ Dalam contoh ini, Images dasar kita adalah versi Alpine dari Nginx. Ini menyedia
     COPY . /usr/share/nginx/html
 diatas merupakan perintah membuat Dockerfile untuk membangun Images dengan menyalin isi di diatas ke dalam editor.
 
-Gambar 10
+  <img src="https://github.com/lilyastri/tct-docker-lily/blob/master/c10.jpg" alt="c10"/>
 
 keterangan isi tersebut : Baris pertama mendefinisikan Images dasar kami. Baris kedua menyalin isi direktori saat ini ke lokasi tertentu di dalam Container.
 
@@ -145,12 +145,13 @@ Perintah build mengambil beberapa parameter yang berbeda. Formatnya adalah docke
 
     docker build -t webserver-image:v1 .
 
-Gambar 11
+  <img src="https://github.com/lilyastri/tct-docker-lily/blob/master/c11.jpg" alt="c11"/>
+  
 perintah yang digunakan untuk membuat Images HTML statis  menggunakan perintah build. Kemudian kita dapat melihat daftar semua Image pada host yang digunakan, menggunakan perintah 
     
     docker images
 
-gambar12
+  <img src="https://github.com/lilyastri/tct-docker-lily/blob/master/c12.JPG" alt="c12"/>
 
 Images yang dibangun akan memiliki nama webserver-gambar dengan tag v1.
 
@@ -166,13 +167,13 @@ perintah meluncurkan images yang baru dibangun dengan menyediakan nama dan tag. 
     
     docker run -d -p 80:80 webserver-image:v1
 
-gambar13
+  <img src="https://github.com/lilyastri/tct-docker-lily/blob/master/c13.jpg" alt="c13"/>
 
 Begitu mulai, kita akan dapat mengakses hasil port 80 melalui perintah 
     
     curl docker
 
-gambar14
+  <img src="https://github.com/lilyastri/tct-docker-lily/blob/master/c14.jpg" alt="c14"/>
 
 Untuk membuat permintaan di browser, gunakan URL   https://2886795343-80-cykoria02.environments.katacoda.com/ . Anda sekarang memiliki situs web HTML statis yang dilayani oleh Nginx.
 
@@ -193,7 +194,7 @@ Images dasar ini digunakan sebagai dasar untuk perubahan tambahan Anda untuk men
 
 Dockerfile adalah file teks sederhana dengan perintah pada setiap baris. Untuk menentukan images dasar, kami menggunakan instruksi FROM <nama-gambar>: <tag>
 
-gambar15
+  <img src="https://github.com/lilyastri/tct-docker-lily/blob/master/c15.jpg" alt="c15"/>
 
 ---
 
@@ -210,8 +211,8 @@ membuat perubahan pada editor Dockerfile. Di dalam lingkungan, Dockerfile baru a
 RUN <command> memungkinkan Anda untuk menjalankan perintah apa pun seperti yang Anda lakukan pada prompt perintah, misalnya menginstal paket aplikasi yang berbeda atau menjalankan perintah build. Hasil RUN dipertahankan ke Images sehingga penting untuk tidak meninggalkan file yang tidak perlu atau sementara pada disk karena ini akan dimasukkan dalam Images.
 
 COPY <src> <dest> memungkinkan Anda untuk menyalin file dari direktori yang berisi Dockerfile ke images kontainer. Ini sangat berguna untuk kode sumber dan aset yang ingin Anda terapkan di dalam kontainer Anda.
-
-gambar16
+ 
+ <img src="https://github.com/lilyastri/tct-docker-lily/blob/master/c16.jpg" alt="c16"/>
 
 ---
 **3. Exposing Ports**
@@ -226,7 +227,7 @@ Tugas
 
 Kami ingin server web kami dapat diakses melalui port 80, tambahkan baris EXPOSE yang relevan ke Dockerfile.
 
-Gambar17
+  <img src="https://github.com/lilyastri/tct-docker-lily/blob/master/c17.jpg" alt="c17"/>
 
 ---
 **4. Building Containers**
@@ -237,7 +238,7 @@ kamu dapat menggunakan perintah dibawah untuk melihat list images yang berada di
     
     docker images
 
-gambar18
+  <img src="https://github.com/lilyastri/tct-docker-lily/blob/master/c18.jpg" alt="c18"/>
 
 ---
 **5. meluncurkan Images Baru**
